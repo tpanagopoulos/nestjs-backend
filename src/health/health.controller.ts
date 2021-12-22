@@ -2,7 +2,6 @@ import { Controller, Get, Inject } from '@nestjs/common';
 import { DiskHealthIndicator, HealthCheck, HealthCheckService, HttpHealthIndicator, MemoryHealthIndicator, TypeOrmHealthIndicator } from '@nestjs/terminus';
 import { InjectConnection } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
-import { DatabaseModule } from 'src/database/database.module';
 
 @Controller('health')
 export class HealthController {
@@ -13,7 +12,7 @@ export class HealthController {
         private memory: MemoryHealthIndicator,
         private disk: DiskHealthIndicator,
         private http: HttpHealthIndicator,
-        @Inject('DATABASE_CONNECTION')
+        @InjectConnection()
         private defaultConnection: Connection,
     ) {}
 
