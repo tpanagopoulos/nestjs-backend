@@ -7,12 +7,13 @@
     "password": "my-backend-password",
     "database": "my-backend-db",
     "entities": [
-        "**/entities/*.entity{.ts,.js}"
+        "dist/**/entities/*.entity{.ts,.js}"
     ],
     "migrationsTableName": "custom_migration_table",
-    "migrations": ["./src/database/migration/*.ts"],
+    "migrations": ["./dist/database/migration/*.js"],
     "cli": {
         "migrationsDir": "./src/database/migration"
     },
-    "synchronize": "false"
+    "synchronize": "false",
+    "logging": true
 }

@@ -102,3 +102,12 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+
+## Lint
+
+Before commiting, ensure lint produces no errors/warnings
+
+```
+npm run lint
+```
